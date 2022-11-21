@@ -2,7 +2,7 @@
 // css variables
 // ==================================== */
 
-@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap-grid";
 
 @font-face {
   font-family: "fa-sharp";
@@ -11,6 +11,7 @@
 
 :root {
   --icon-font: fa-sharp;
+  --font-main: helvetica-neue;
 }
 
 /* ====================================
@@ -33,6 +34,7 @@ body {
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.25;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -52,6 +54,108 @@ video {
 
 .icons {
   font-family: var(--icon-font);
-  padding: 10px;
-  background-color: red;
+}
+
+.in-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  width: 100%;
+}
+
+header {
+  background-color: #000;
+  position: sticky;
+  top: 0;
+
+  .icons {
+    color: #fff;
+    font-size: 33px;
+    line-height: 0;
+  }
+}
+
+.giant-logo-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 52px 0;
+}
+
+.row-logo {
+  justify-content: center;
+}
+
+.giant-logo {
+  width: 100%;
+}
+
+nav {
+  color: #fff;
+}
+
+.bg-card-founder {
+  background-color: #000;
+  background-image: url(../img/bg-card-founder.webp);
+}
+
+.bg-special-fx {
+  backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+.card-founder {
+  color: #fff;
+  font-size: 45px;
+  padding: 168px 0;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .nav-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .micro-title {
+    opacity: 0.47;
+    font-family: HelveticaNeue-Medium;
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  .in-header {
+    display: block;
+  }
+
+  .menu-trigger {
+    display: none;
+  }
+
+  .micro-title {
+    opacity: 0.47;
+    font-family: HelveticaNeue-Medium;
+    font-size: 20px;
+  }
+
+  .logo-header {
+    display: none;
+  }
 }
