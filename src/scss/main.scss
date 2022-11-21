@@ -2,7 +2,15 @@
 // css variables
 // ==================================== */
 
+@import "bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: "fa-sharp";
+  src: url(../fonts/fa-sharp-solid-900.woff2) format(woff2);
+}
+
 :root {
+  --icon-font: fa-sharp;
 }
 
 /* ====================================
@@ -23,7 +31,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-
   font-size: 1rem;
   line-height: 1.25;
 }
@@ -42,3 +49,9 @@ video {
 /* ====================================
 // base rules
 // ==================================== */
+
+.icons {
+  font-family: var(--icon-font);
+  padding: 10px;
+  background-color: red;
+}

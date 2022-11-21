@@ -1,0 +1,44 @@
+@font-face {
+  font-family: fa-sharp;
+  src: url("fa-sharp-solid-900.3f2f2c12.woff2") format("woff2");
+}
+
+:root {
+  --icon-font: fa-sharp;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+}
+
+img, video {
+  max-inline-size: 100%;
+  block-size: auto;
+  vertical-align: middle;
+}
+
+.icons {
+  font-family: var(--icon-font);
+  background-color: red;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=index.b10d73a7.css.map */
