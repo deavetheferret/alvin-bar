@@ -5002,6 +5002,11 @@
   src: url("fa-sharp-solid-900.3f2f2c12.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: helvetica-neue;
+  src: url("HelveticaNeue-01.35847527.woff2") format("woff2");
+}
+
 :root {
   --icon-font: fa-sharp;
   --font-main: helvetica-neue;
@@ -5021,9 +5026,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.25;
+  font-family: var(--font-main);
 }
 
 a {

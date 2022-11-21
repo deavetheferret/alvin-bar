@@ -9,6 +9,11 @@
   src: url(../fonts/fa-sharp-solid-900.woff2) format(woff2);
 }
 
+@font-face {
+  font-family: helvetica-neue;
+  src: url(../fonts/HelveticaNeue-01.woff2) format(woff2);
+}
+
 :root {
   --icon-font: fa-sharp;
   --font-main: helvetica-neue;
@@ -34,7 +39,7 @@ body {
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.25;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-main);
 }
 
 a {
