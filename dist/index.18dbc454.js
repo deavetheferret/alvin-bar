@@ -532,6 +532,16 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1SICI":[function(require,module,exports) {
+var buttons = document.querySelectorAll(".button");
+buttons.forEach((button)=>{
+    var underline = button.querySelector(".underline");
+    button.addEventListener("mousemove", ()=>{
+        underline.classList.add("underlining");
+    });
+    button.addEventListener("mouseleave", ()=>{
+        underline.classList.remove("underlining");
+    });
+});
 
 },{}]},["jQVXF","1SICI"], "1SICI", "parcelRequire0300")
 

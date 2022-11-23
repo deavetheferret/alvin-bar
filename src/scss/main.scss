@@ -106,7 +106,7 @@ nav {
 }
 
 .bg-special-fx {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(7px);
   width: 100%;
 }
 
@@ -114,6 +114,18 @@ nav {
   color: #fff;
   font-size: 45px;
   padding: 168px 0;
+}
+
+.underline {
+  height: 1px;
+  width: 0%;
+  background-color: #fff;
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.underlining {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
