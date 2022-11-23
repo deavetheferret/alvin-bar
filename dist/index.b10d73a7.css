@@ -5010,6 +5010,9 @@
 :root {
   --icon-font: fa-sharp;
   --font-main: helvetica-neue;
+  --color-main: #000;
+  --color-second: #fff;
+  --color-enhanced: red;
 }
 
 * {
@@ -5054,7 +5057,8 @@ img, video {
 }
 
 header {
-  background-color: #000;
+  background-color: var(--color-main);
+  z-index: 1000;
   position: sticky;
   top: 0;
 }
@@ -5097,8 +5101,6 @@ nav {
 
 .card-founder {
   color: #fff;
-  padding: 168px 0;
-  font-size: 45px;
 }
 
 .underline {
@@ -5110,6 +5112,47 @@ nav {
 
 .underlining {
   width: 100%;
+}
+
+.text-container-header {
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  overflow: hidden;
+}
+
+.text-container-header .text-anim {
+  white-space: nowrap;
+}
+
+.events {
+  background-color: var(--color-main);
+  color: var(--color-second);
+}
+
+h2 {
+  text-transform: uppercase;
+  padding: 36px 0 22px;
+  font-weight: 600;
+}
+
+figure {
+  position: relative;
+}
+
+figcaption {
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-enhanced);
+  transition: all .3s cubic-bezier(.075, .82, .165, 1);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+figcaption-hover {
+  width: 100%;
+  height: 100%;
+  background-color: #f003;
 }
 
 @media screen and (max-width: 768px) {
@@ -5124,10 +5167,19 @@ nav {
     display: flex;
   }
 
-  .micro-title {
+  .card-founder {
+    padding: 33.75px 0 47.75px;
+    font-size: 16px;
+  }
+
+  .card-founder .micro-title {
     opacity: .47;
     font-family: HelveticaNeue-Medium;
     font-size: 10px;
+  }
+
+  h2 {
+    font-size: 48px;
   }
 }
 
@@ -5146,18 +5198,19 @@ nav {
     display: block;
   }
 
-  .menu-trigger {
+  .menu-trigger, .logo-header {
     display: none;
   }
 
-  .micro-title {
+  .card-founder {
+    padding: 168px 0;
+    font-size: 45px;
+  }
+
+  .card-founder .micro-title {
     opacity: .47;
     font-family: HelveticaNeue-Medium;
     font-size: 20px;
-  }
-
-  .logo-header {
-    display: none;
   }
 }
 

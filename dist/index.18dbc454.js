@@ -542,6 +542,16 @@ buttons.forEach((button)=>{
         underline.classList.remove("underlining");
     });
 });
+var figures = document.querySelectorAll(".trigger");
+figures.forEach((trigger)=>{
+    var figcaption = trigger.querySelector(".cover-square");
+    figure.addEventListener("mousemove", ()=>{
+        figcaption.classList.add("figcaption-hover");
+    });
+    figure.addEventListener("mouseleave", ()=>{
+        figcaption.classList.remove("figcaption-hover");
+    });
+});
 
 },{}]},["jQVXF","1SICI"], "1SICI", "parcelRequire0300")
 
