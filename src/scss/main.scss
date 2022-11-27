@@ -116,6 +116,7 @@ nav {
 
 .card-founder {
   color: #fff;
+  user-select: none;
 }
 
 .underline {
@@ -166,10 +167,10 @@ figcaption {
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-figcaption-hover {
+.coverSquare {
   width: 100%;
   height: 100%;
-  background-color: #ff000033;
+  background-color: #ff000044;
 }
 
 @media screen and (max-width: 768px) {
@@ -197,6 +198,16 @@ figcaption-hover {
 
   h2 {
     font-size: 48px;
+  }
+
+  .events {
+    article {
+      margin-bottom: 40px;
+    }
+
+    article:last-child {
+      margin-bottom: 68px;
+    }
   }
 }
 
@@ -226,11 +237,17 @@ figcaption-hover {
   .card-founder {
     font-size: 45px;
     padding: 168px 0;
+    transform: translateZ(0px);
+    transition: 1s;
 
     .micro-title {
       opacity: 0.47;
       font-family: HelveticaNeue-Medium;
       font-size: 20px;
     }
+  }
+
+  .card-founder:hover {
+    transform: translateZ(10px);
   }
 }

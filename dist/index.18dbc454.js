@@ -542,14 +542,14 @@ buttons.forEach((button)=>{
         underline.classList.remove("underlining");
     });
 });
-var figures = document.querySelectorAll(".trigger");
-figures.forEach((trigger)=>{
-    var figcaption = trigger.querySelector(".cover-square");
-    figure.addEventListener("mousemove", ()=>{
-        figcaption.classList.add("figcaption-hover");
+var triggers = document.querySelectorAll(".trigger");
+triggers.forEach((trigger)=>{
+    var coverSquare = trigger.querySelector(".cover-square");
+    trigger.addEventListener("mousemove", ()=>{
+        coverSquare.classList.add("coverSquare");
     });
-    figure.addEventListener("mouseleave", ()=>{
-        figcaption.classList.remove("figcaption-hover");
+    trigger.addEventListener("mouseleave", ()=>{
+        coverSquare.classList.remove("coverSquare");
     });
 });
 

@@ -5101,6 +5101,8 @@ nav {
 
 .card-founder {
   color: #fff;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .underline {
@@ -5149,10 +5151,10 @@ figcaption {
   right: 0;
 }
 
-figcaption-hover {
+.coverSquare {
   width: 100%;
   height: 100%;
-  background-color: #f003;
+  background-color: #f004;
 }
 
 @media screen and (max-width: 768px) {
@@ -5181,6 +5183,14 @@ figcaption-hover {
   h2 {
     font-size: 48px;
   }
+
+  .events article {
+    margin-bottom: 40px;
+  }
+
+  .events article:last-child {
+    margin-bottom: 68px;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -5205,12 +5215,18 @@ figcaption-hover {
   .card-founder {
     padding: 168px 0;
     font-size: 45px;
+    transition: all 1s;
+    transform: translateZ(0);
   }
 
   .card-founder .micro-title {
     opacity: .47;
     font-family: HelveticaNeue-Medium;
     font-size: 20px;
+  }
+
+  .card-founder:hover {
+    transform: translateZ(10px);
   }
 }
 

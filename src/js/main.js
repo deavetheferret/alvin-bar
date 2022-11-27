@@ -12,16 +12,16 @@ buttons.forEach((button) => {
   });
 });
 
-var figures = document.querySelectorAll(".trigger");
+var triggers = document.querySelectorAll(".trigger");
 
-figures.forEach((trigger) => {
-  var figcaption = trigger.querySelector(".cover-square");
+triggers.forEach((trigger) => {
+  var coverSquare = trigger.querySelector(".cover-square");
 
-  figure.addEventListener("mousemove", () => {
-    figcaption.classList.add("figcaption-hover");
+  trigger.addEventListener("mousemove", () => {
+    coverSquare.classList.add("coverSquare");
   });
 
-  figure.addEventListener("mouseleave", () => {
-    figcaption.classList.remove("figcaption-hover");
+  trigger.addEventListener("mouseleave", () => {
+    coverSquare.classList.remove("coverSquare");
   });
 });
