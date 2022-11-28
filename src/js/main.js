@@ -18,10 +18,10 @@ triggers.forEach((trigger) => {
   var coverSquare = trigger.querySelector(".cover-square");
 
   trigger.addEventListener("mousemove", () => {
-    coverSquare.classList.add("coverSquare");
+    coverSquare.classList.add("coverSquareOn");
   });
 
   trigger.addEventListener("mouseleave", () => {
-    coverSquare.classList.remove("coverSquare");
+    coverSquare.classList.remove("coverSquareOn");
   });
 });

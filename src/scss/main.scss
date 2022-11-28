@@ -144,6 +144,29 @@ nav {
 .events {
   background-color: var(--color-main);
   color: var(--color-second);
+
+  .event-article {
+    margin-bottom: 150px;
+    :last-of-type {
+      margin-bottom: 0;
+    }
+    .article-info {
+      .article-date {
+        opacity: 30%;
+        font-size: 26px;
+        line-height: 31px;
+      }
+      .article-title {
+        font-size: 45px;
+        line-height: 54px;
+        font-weight: 600;
+      }
+      .article-resume {
+        font-size: 28px;
+        line-height: 33px;
+      }
+    }
+  }
 }
 
 h2 {
@@ -156,7 +179,7 @@ figure {
   position: relative;
 }
 
-figcaption {
+.cover-square {
   width: 25px;
   height: 25px;
   background-color: var(--color-enhanced);
@@ -165,12 +188,72 @@ figcaption {
   right: 0;
   transition: 0.3s;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  overflow: hidden;
+
+  .CS-input {
+    display: none;
+  }
 }
 
-.coverSquare {
+.coverSquareOn {
   width: 100%;
   height: 100%;
   background-color: #ff000044;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+  .CS-input {
+    color: var(--color-second);
+    display: block;
+    border: solid var(--color-second) 3px;
+    padding: 15px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    // backdrop-filter: blur(3px);
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.event-article {
+  margin-bottom: 150px;
+  :last-of-type {
+    margin-bottom: 89px;
+  }
+  .article-info {
+    .article-date {
+      opacity: 30%;
+    }
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.btn-more {
+  padding: 13px 17px;
+  font-size: 31px;
+  border: solid var(--color-second) 3px;
+  text-decoration: none;
+  span {
+    margin-left: 38px;
+  }
+  .underline {
+    height: 3px;
+  }
+  .underlining {
+    height: 3px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -249,5 +332,16 @@ figcaption {
 
   .card-founder:hover {
     transform: translateZ(10px);
+  }
+
+  .event-article {
+    margin-bottom: 150px;
+    :last-of-type {
+      margin-bottom: 90px;
+    }
+    .article-info {
+      .article-date {
+      }
+    }
   }
 }
