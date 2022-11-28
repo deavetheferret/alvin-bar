@@ -14,9 +14,15 @@
   src: url(../fonts/HelveticaNeue-01.woff2) format(woff2);
 }
 
+@font-face {
+  font-family: helvetica-neue-light;
+  src: url(../fonts/HelveticaNeue-Light-08.woff2) format(woff2);
+}
+
 :root {
   --icon-font: fa-sharp;
   --font-main: helvetica-neue;
+  --font-light: helvetica-neue-light;
   --color-main: #000000;
   --color-second: #ffffff;
   --color-enhanced: #ff0000;
@@ -147,9 +153,6 @@ nav {
 
   .event-article {
     margin-bottom: 150px;
-    :last-of-type {
-      margin-bottom: 0;
-    }
     .article-info {
       .article-date {
         opacity: 30%;
@@ -221,23 +224,10 @@ figure {
   }
 }
 
-.event-article {
-  margin-bottom: 150px;
-  :last-of-type {
-    margin-bottom: 89px;
-  }
-  .article-info {
-    .article-date {
-      opacity: 30%;
-    }
-  }
-}
-
 .btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 90px;
 }
 
 .btn-more {
@@ -245,16 +235,21 @@ figure {
   font-size: 31px;
   border: solid var(--color-second) 3px;
   text-decoration: none;
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   span {
     margin-left: 38px;
   }
-  .underline {
-    height: 3px;
-  }
-  .underlining {
-    height: 3px;
-  }
 }
+
+.btn-more:hover {
+  background-color: var(--color-second);
+  color: var(--color-main);
+}
+
+// ==============================================
+// media querries
+// ==============================================
 
 @media screen and (max-width: 768px) {
   nav {
@@ -281,15 +276,45 @@ figure {
 
   h2 {
     font-size: 48px;
+    padding: 36px 0 22px;
   }
 
   .events {
-    article {
+    .event-article {
       margin-bottom: 40px;
+      .article-info {
+        margin-top: 12px;
+        .article-date {
+          opacity: 30%;
+          font-size: 15px;
+          line-height: 17px;
+        }
+        .article-title {
+          font-size: 34px;
+          line-height: 40px;
+          font-weight: 600;
+        }
+        .article-resume {
+          font-size: 17px;
+          line-height: 20px;
+        }
+      }
     }
+  }
 
-    article:last-child {
-      margin-bottom: 68px;
+  .btn-container {
+    margin-bottom: 73px;
+  }
+
+  .btn-more {
+    padding: 6px 16px;
+    font-size: 17px;
+    border: solid var(--color-second) 2px;
+    text-decoration: none;
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    span {
+      margin-left: 12px;
     }
   }
 }
@@ -320,27 +345,80 @@ figure {
   .card-founder {
     font-size: 45px;
     padding: 168px 0;
-    transform: translateZ(0px);
+    scale: 100%;
     transition: 1s;
 
     .micro-title {
       opacity: 0.47;
-      font-family: HelveticaNeue-Medium;
       font-size: 20px;
     }
   }
 
   .card-founder:hover {
-    transform: translateZ(10px);
+    scale: 105%;
+  }
+
+  h2 {
+    font-size: 93px;
+    padding: 68px 0 45px;
   }
 
   .event-article {
     margin-bottom: 150px;
-    :last-of-type {
-      margin-bottom: 90px;
+    .article-info-left-side {
+      text-align: end;
     }
-    .article-info {
-      .article-date {
+  }
+
+  .btn-container {
+    margin-bottom: 90px;
+  }
+
+  .cocktails {
+    h2 {
+      padding: 68px 0 16px;
+    }
+
+    p {
+      font-size: 22px;
+    }
+
+    .title-section {
+      margin-bottom: 40px;
+    }
+
+    .line {
+      height: 3px;
+      width: 100%;
+      background-color: var(--color-main);
+      margin: 15px 0;
+    }
+
+    .l-bottom {
+      margin-top: 15px;
+    }
+
+    .cocktail-article {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      height: 174px;
+      .cocktail-title {
+        font-size: 43px;
+      }
+
+      p {
+        flex-grow: 1;
+        font-family: var(--font-light);
+      }
+
+      .price-container {
+        display: flex;
+        justify-content: end;
+        align-self: flex-end;
+        .ct-art-price {
+          font-style: italic;
+        }
       }
     }
   }
