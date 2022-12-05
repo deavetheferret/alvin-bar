@@ -5125,11 +5125,23 @@ nav {
 .text-container-header {
   border-top: 3px solid #000;
   border-bottom: 3px solid #000;
+  display: flex;
   overflow: hidden;
 }
 
 .text-container-header .text-anim {
   white-space: nowrap;
+  animation: scrollTxt 12.5s linear infinite;
+}
+
+@keyframes scrollTxt {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .events {
@@ -5237,10 +5249,86 @@ figure {
   border-color: var(--color-enhanced);
 }
 
+.cocktails .line {
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-main);
+  margin: 15px 0;
+}
+
+.cocktails .l-bottom {
+  margin-top: 15px;
+}
+
 .btn-more:hover {
   background-color: var(--color-enhanced);
   color: var(--color-second);
   border-color: var(--color-enhanced);
+}
+
+footer {
+  background-color: var(--color-main);
+  color: var(--color-second);
+}
+
+footer .line {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-second);
+  margin: 12px 0;
+}
+
+footer .l-bottom {
+  margin: 12px 0 60px;
+}
+
+.contact-item {
+  gap: 50px;
+  display: flex;
+  position: relative;
+}
+
+.contact-item span.list-dot {
+  letter-spacing: 5px;
+  z-index: 10;
+  margin-left: 20px;
+  font-size: 27px;
+  font-weight: 300;
+}
+
+.contact-item a {
+  z-index: 10;
+  font-size: 27px;
+  text-decoration: none;
+}
+
+.hover-bg {
+  background-color: var(--color-enhanced);
+  height: 100%;
+  width: 0%;
+  z-index: 0;
+  transition: width .3s cubic-bezier(.075, .82, .165, 1);
+  position: absolute;
+}
+
+.active-hover-bg {
+  width: 100%;
+}
+
+.conard {
+  justify-content: space-between;
+  display: flex;
+}
+
+.conard .rights-tag {
+  font-size: 21px;
+  font-family: var(--font-light);
+  text-align: right;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 60px;
+  display: inline-block;
 }
 
 @media screen and (max-width: 768px) {
@@ -5324,17 +5412,6 @@ figure {
     margin-bottom: 30px;
   }
 
-  .cocktails .line {
-    height: 3px;
-    width: 100%;
-    background-color: var(--color-main);
-    margin: 15px 0;
-  }
-
-  .cocktails .l-bottom {
-    margin-top: 15px;
-  }
-
   .cocktails .cocktail-article {
     height: 154px;
     flex-flow: column wrap;
@@ -5370,6 +5447,42 @@ figure {
 
   .cocktails .btn-more span {
     margin-left: 12px;
+  }
+
+  footer .l-bottom {
+    margin-bottom: 30px;
+  }
+
+  .contact-item {
+    gap: 15px;
+    display: flex;
+    position: relative;
+  }
+
+  .contact-item span.list-dot {
+    letter-spacing: 5px;
+    z-index: 10;
+    margin-left: 10px;
+    font-size: 27px;
+    font-weight: 300;
+  }
+
+  .contact-item a {
+    z-index: 10;
+    font-size: 27px;
+    text-decoration: none;
+  }
+
+  .conard {
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .conard .rights-tag {
+    font-size: 12px;
+    font-family: var(--font-light);
+    margin: 30px 0 15px;
+    display: inline-block;
   }
 }
 
@@ -5435,17 +5548,6 @@ figure {
 
   .cocktails .title-section {
     margin-bottom: 40px;
-  }
-
-  .cocktails .line {
-    height: 3px;
-    width: 100%;
-    background-color: var(--color-main);
-    margin: 15px 0;
-  }
-
-  .cocktails .l-bottom {
-    margin-top: 15px;
   }
 
   .cocktails .cocktail-article {

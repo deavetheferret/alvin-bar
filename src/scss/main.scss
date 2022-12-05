@@ -141,9 +141,21 @@ nav {
   overflow: hidden;
   border-bottom: solid #000 3px;
   border-top: solid #000 3px;
+  display: flex;
 
   .text-anim {
     white-space: nowrap;
+    animation: scrollTxt 12.5s linear infinite;
+  }
+}
+
+@keyframes scrollTxt {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
   }
 }
 
@@ -253,12 +265,85 @@ figure {
   .btn-more:hover {
     border-color: var(--color-enhanced);
   }
+
+  .line {
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-main);
+    margin: 15px 0;
+  }
+
+  .l-bottom {
+    margin-top: 15px;
+  }
 }
 
 .btn-more:hover {
   background-color: var(--color-enhanced);
   color: var(--color-second);
   border-color: var(--color-enhanced);
+}
+
+footer {
+  background-color: var(--color-main);
+  color: var(--color-second);
+
+  .line {
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-second);
+    margin: 12px 0;
+  }
+
+  .l-bottom {
+    margin: 12px 0 60px;
+  }
+}
+
+.contact-item {
+  display: flex;
+  gap: 50px;
+  position: relative;
+  span.list-dot {
+    margin-left: 20px;
+    font-size: 27px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    z-index: 10;
+  }
+  a {
+    text-decoration: none;
+    font-size: 27px;
+    z-index: 10;
+  }
+}
+
+.hover-bg {
+  background-color: var(--color-enhanced);
+  height: 100%;
+  width: 0%;
+  position: absolute;
+  z-index: 0;
+  transition: width 0.3s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.active-hover-bg {
+  width: 100%;
+}
+
+.conard {
+  display: flex;
+  justify-content: space-between;
+  .rights-tag {
+    font-size: 21px;
+    font-family: var(--font-light);
+    text-align: right;
+    margin-bottom: 60px;
+    display: inline-block;
+    user-select: none;
+    cursor: pointer;
+  }
 }
 // ==============================================
 // media querries
@@ -344,17 +429,6 @@ figure {
       margin-bottom: 30px;
     }
 
-    .line {
-      height: 3px;
-      width: 100%;
-      background-color: var(--color-main);
-      margin: 15px 0;
-    }
-
-    .l-bottom {
-      margin-top: 15px;
-    }
-
     .cocktail-article {
       display: flex;
       flex-wrap: wrap;
@@ -388,6 +462,41 @@ figure {
       span {
         margin-left: 12px;
       }
+    }
+  }
+
+  footer {
+    .l-bottom {
+      margin-bottom: 30px;
+    }
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    span.list-dot {
+      margin-left: 10px;
+      font-size: 27px;
+      font-weight: 300;
+      letter-spacing: 5px;
+      z-index: 10;
+    }
+    a {
+      text-decoration: none;
+      font-size: 27px;
+      z-index: 10;
+    }
+  }
+
+  .conard {
+    display: flex;
+    justify-content: space-between;
+    .rights-tag {
+      font-size: 12px;
+      font-family: var(--font-light);
+      margin: 30px 0 15px;
+      display: inline-block;
     }
   }
 }
@@ -458,17 +567,6 @@ figure {
 
     .title-section {
       margin-bottom: 40px;
-    }
-
-    .line {
-      height: 3px;
-      width: 100%;
-      background-color: var(--color-main);
-      margin: 15px 0;
-    }
-
-    .l-bottom {
-      margin-top: 15px;
     }
 
     .cocktail-article {

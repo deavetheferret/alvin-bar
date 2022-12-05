@@ -25,3 +25,17 @@ triggers.forEach((trigger) => {
     coverSquare.classList.remove("coverSquareOn");
   });
 });
+
+var triggersContact = document.querySelectorAll(".triggerContact");
+
+triggersContact.forEach((triggerContact) => {
+  var hoverBackground = triggerContact.querySelector(".hover-bg");
+
+  triggerContact.addEventListener("mousemove", () => {
+    hoverBackground.classList.add("active-hover-bg");
+  });
+
+  triggerContact.addEventListener("mouseleave", () => {
+    hoverBackground.classList.remove("active-hover-bg");
+  });
+});
