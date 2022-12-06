@@ -5027,6 +5027,11 @@
   padding: 0;
 }
 
+* ::selection {
+  background-color: var(--color-enhanced);
+  color: var(--color-second);
+}
+
 html {
   font-size: 16px;
 }
@@ -5052,6 +5057,9 @@ img, video {
 
 .icons {
   font-family: var(--icon-font);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 
 .in-header {
@@ -5072,7 +5080,6 @@ header {
 header .icons {
   color: #fff;
   font-size: 33px;
-  line-height: 0;
 }
 
 .giant-logo-cont {
@@ -5331,7 +5338,70 @@ footer .l-bottom {
   display: inline-block;
 }
 
+.menuOpen {
+  background-color: var(--color-main);
+  font-family: var(--font-light);
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+  font-size: 50px;
+  display: flex;
+  position: absolute;
+  top: 75px;
+  right: 0;
+}
+
+.menuOpen a {
+  text-decoration: none;
+}
+
+.selected {
+  font-style: italic;
+  font-weight: 800;
+}
+
+.error-container {
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 250px 0;
+  display: flex;
+}
+
+.error-container .error-title, .error-container .error-caption {
+  display: inline-block;
+}
+
+.error-container .error-title {
+  text-transform: uppercase;
+  font-size: 140px;
+  font-style: italic;
+}
+
 @media screen and (max-width: 768px) {
+  .error-container {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+    display: flex;
+  }
+
+  .error-container .error-title, .error-container .error-caption {
+    display: inline-block;
+  }
+
+  .error-container .error-title {
+    text-transform: uppercase;
+    font-size: 90px;
+    font-style: italic;
+  }
+
+  .logo-header {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
   nav {
     display: none;
   }

@@ -36,6 +36,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  ::selection {
+    background-color: var(--color-enhanced);
+    color: var(--color-second);
+  }
 }
 
 html {
@@ -68,6 +72,8 @@ video {
 
 .icons {
   font-family: var(--icon-font);
+  user-select: none;
+  cursor: pointer;
 }
 
 .in-header {
@@ -87,7 +93,6 @@ header {
   .icons {
     color: #fff;
     font-size: 33px;
-    line-height: 0;
   }
 }
 
@@ -345,11 +350,73 @@ footer {
     cursor: pointer;
   }
 }
+
+.menuOpen {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: flex-end;
+  background-color: var(--color-main);
+  font-family: var(--font-light);
+  font-size: 50px;
+  padding: 20px;
+  top: 75px;
+  right: 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+.selected {
+  font-weight: 800;
+  font-style: italic;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 250px 0;
+  .error-title,
+  .error-caption {
+    display: inline-block;
+  }
+  .error-title {
+    font-size: 140px;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+}
+
 // ==============================================
 // media querries
 // ==============================================
 
 @media screen and (max-width: 768px) {
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 100px 0;
+    .error-title,
+    .error-caption {
+      display: inline-block;
+    }
+    .error-title {
+      font-size: 90px;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+  }
+
+  .logo-header {
+    user-select: none;
+  }
+
   nav {
     display: none;
   }
